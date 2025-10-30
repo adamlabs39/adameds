@@ -70,3 +70,7 @@
     path = stok-farmasi-service
     url = https://github.com/adamlabs39/stok-farmasi-service.git
 
+
+[submodule "frontend-service"]
+    path = frontend-service
+    url = https://github.com/adamlabs39/frontend-service.git

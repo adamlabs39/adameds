@@ -1,51 +1,62 @@
 services:
   admisi-services:
     container_name: admisi-service
+    image: adameds/admisi-service:v1.0.0.0
   
   antrian-service:
     container_name: antrian-service
+    image: adameds/antrian-service:v1.0.0.0
 
   auth-service:
     container_name: auth-service
-  
+    image: adameds/auth-service:v1.0.0.0
   farmasi-service:
     container_name: farmasi-service
+    image: adameds/farmasi-service:v1.0.0.0
   
   igd-service:
     container_name: igd-service
+    image: adameds/igd-service:v1.0.0.0
 
   inventory-service:
     container_name: inventory-service
+    image: adameds/inventory-service:v1.0.0.0
   
   lab-service:
     container_name: lab-service
+    image: adameds/lab-service:v1.0.0.0
   
   laporan-service:
     container_name: laporan-service
+    image: adameds/laporan-service:v1.0.0.0
   
   payment-service:
     container_name: payment-service
+    image: adameds/payment-service:v1.0.0.0
   
   riwayat-service:
     container_name: riwayat-service
+    image: adameds/riwayat-service:v1.0.0.0
   
   rawat-inap-service:
     container_name: rawat-inap-service
+    image: adameds/rawat-inap-service:v1.0.0.0
   
   rawat-jalan-service:
     container_name: rawat-jalan-service
+    image: adameds/rawat-jalan-service:v1.0.0.0
   
   rekamedis-service:
     container_name: rekamedis-service
+    image: adameds/rekamedis-service:v1.0.0.0
   
   setting-service:
     container_name: setting-service
+    image: adameds/setting-service:v1.0.0.0
   
   stok-farmasi-service:
     container_name: stok-farmasi-service
-
-
-
+    image: adameds/stok-farmasi-service:v1.0.0.0
 
 
 volumes:

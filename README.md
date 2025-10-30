@@ -4,3 +4,4 @@
 - Docker v26.0.0 atau lebih baru
 - Ram minimal 4GB
 - CPU minimal core i3
+- Penyimpanan minimal 100GB

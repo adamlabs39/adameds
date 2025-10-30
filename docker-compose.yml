@@ -1,0 +1,57 @@
+services:
+  admisi-services:
+    container_name: admisi-service
+  
+  antrian-service:
+    container_name: antrian-service
+
+  auth-service:
+    container_name: auth-service
+  
+  farmasi-service:
+    container_name: farmasi-service
+  
+  igd-service:
+    container_name: igd-service
+
+  inventory-service:
+    container_name: inventory-service
+  
+  lab-service:
+    container_name: lab-service
+  
+  laporan-service:
+    container_name: laporan-service
+  
+  payment-service:
+    container_name: payment-service
+  
+  riwayat-service:
+    container_name: riwayat-service
+  
+  rawat-inap-service:
+    container_name: rawat-inap-service
+  
+  rawat-jalan-service:
+    container_name: rawat-jalan-service
+  
+  rekamedis-service:
+    container_name: rekamedis-service
+  
+  setting-service:
+    container_name: setting-service
+  
+  stok-farmasi-service:
+    container_name: stok-farmasi-service
+
+
+
+
+
+volumes:
+  db-adameds: {}
+
+
+networks:
+  adameds:
+    driver: host

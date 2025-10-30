@@ -1,0 +1,72 @@
+[submodule "admisi-service"]
+    path = admisi-service
+    url = https://github.com/adamlabs39/admisi-service.git
+
+
+[submodule "antrian-service"]
+    path = antrian-service
+    url = https://github.com/adamlabs39/antrian-service.git
+
+
+[submodule "auth-service"]
+    path = auth-service
+    url = https://github.com/adamlabs39/auth-service.git
+
+
+
+[submodule "farmasi-service"]
+    path = farmasi-service
+    url = https://github.com/adamlabs39/farmasi-service.gi
+
+
+
+[submodule "igd-service"]
+    path = igd-service
+    url = https://github.com/adamlabs39/igd-service.git
+
+
+
+[submodule "inventory-service"]
+    path = inventory-service
+    url = https://github.com/adamlabs39/inventory-service.git
+
+
+[submodule "lab-service"]
+    path = lab-service
+    url = https://github.com/adamlabs39/lab-service.git
+
+
+[submodule "laporan-service"]
+    path = laporan-service
+    url = https://github.com/adamlabs39/laporan-service.git
+
+
+[submodule "payment-service"]
+    path = payment-service
+    url =  https://github.com/adamlabs39/payment-service.git
+
+
+[submodule "rawat-inap-service"]
+    path = rawat-inap-service
+    url = https://github.com/adamlabs39/rawat-inap-service.git
+
+
+[submodule "rawat-jalan-service"]
+    path = rawat-jalan-service
+    url = https://github.com/adamlabs39/rawat-jalan-service.git
+
+    
+[submodule "rekamedis-service"]
+    path = rekamedis-service
+    url = https://github.com/adamlabs39/rekamedis-service.git
+
+
+[submodule "setting-service"]
+    path = setting-service
+    url = https://github.com/adamlabs39/setting-service.git
+
+
+[submodule "stok-farmasi-service"]
+    path = stok-farmasi-service
+    url = https://github.com/adamlabs39/stok-farmasi-service.git
+

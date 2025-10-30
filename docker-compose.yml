@@ -2,67 +2,183 @@ services:
   admisi-services:
     container_name: admisi-service
     image: adameds/admisi-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./admisi-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
+    ports: ["8083:8083"]
   
   antrian-service:
     container_name: antrian-service
     image: adameds/antrian-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./antrian-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
 
   auth-service:
     container_name: auth-service
     image: adameds/auth-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./auth-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
+    
   farmasi-service:
     container_name: farmasi-service
     image: adameds/farmasi-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./farmasi-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
   
   igd-service:
     container_name: igd-service
     image: adameds/igd-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./igd-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
 
   inventory-service:
     container_name: inventory-service
     image: adameds/inventory-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./inventory-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
   
   lab-service:
     container_name: lab-service
     image: adameds/lab-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./lab-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
   
   laporan-service:
     container_name: laporan-service
     image: adameds/laporan-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./laporan-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
   
   payment-service:
     container_name: payment-service
     image: adameds/payment-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./payment-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
   
   riwayat-service:
     container_name: riwayat-service
     image: adameds/riwayat-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./riwayat-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
   
   rawat-inap-service:
     container_name: rawat-inap-service
     image: adameds/rawat-inap-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./rawat-inap-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
   
   rawat-jalan-service:
     container_name: rawat-jalan-service
     image: adameds/rawat-jalan-service:v1.0.0.0
-  
+    build:
+      context: ./
+      dockerfile: ./rawat-jalan-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
+
   rekamedis-service:
     container_name: rekamedis-service
     image: adameds/rekamedis-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./rekamedis-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
   
   setting-service:
     container_name: setting-service
     image: adameds/setting-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./setting-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
   
   stok-farmasi-service:
     container_name: stok-farmasi-service
     image: adameds/stok-farmasi-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./stok-farmasi-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
+  db:
+    container_name: db-adameds
+    ports: ["5432:5432"]
+    image: postgres:16-alpine3.21
+    volumes:
+      - type: volume
+        source: db-adameds
+        target: /var/lib/postgresql
+    restart: always
+    env_file:
+      - .env
 
 
 volumes:
   db-adameds: {}
-
-
 networks:
   adameds:
     driver: host

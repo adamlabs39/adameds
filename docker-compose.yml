@@ -1,5 +1,6 @@
 services:
   admisi-services:
+    depends_on: [db]
     container_name: admisi-service
     image: adameds/admisi-service:v1.0.0.0
     build:
@@ -9,9 +10,10 @@ services:
       - .env
     networks: [adameds]
     restart: always
-    ports: ["8083:8083"]
+    ports: ["8081:8081"]
   
   antrian-service:
+    depends_on: [db]
     container_name: antrian-service
     image: adameds/antrian-service:v1.0.0.0
     build:
@@ -21,8 +23,10 @@ services:
       - .env
     networks: [adameds]
     restart: always
+    ports: ["8082:8082"]
 
   auth-service:
+    depends_on: [db]
     container_name: auth-service
     image: adameds/auth-service:v1.0.0.0
     build:
@@ -32,8 +36,10 @@ services:
       - .env
     networks: [adameds]
     restart: always
+    ports: ["8083:8083"]
     
   farmasi-service:
+    depends_on: [db]
     container_name: farmasi-service
     image: adameds/farmasi-service:v1.0.0.0
     build:
@@ -43,8 +49,10 @@ services:
       - .env
     networks: [adameds]
     restart: always
+    ports: ["8084:8084"]
   
   igd-service:
+    depends_on: [db]
     container_name: igd-service
     image: adameds/igd-service:v1.0.0.0
     build:
@@ -54,8 +62,10 @@ services:
       - .env
     networks: [adameds]
     restart: always
+    ports: ["8085:8085"]
 
   inventory-service:
+    depends_on: [db]
     container_name: inventory-service
     image: adameds/inventory-service:v1.0.0.0
     build:
@@ -65,8 +75,10 @@ services:
       - .env
     networks: [adameds]
     restart: always
+    ports: ["8086:8086"]
   
   lab-service:
+    depends_on: [db]
     container_name: lab-service
     image: adameds/lab-service:v1.0.0.0
     build:
@@ -76,8 +88,10 @@ services:
       - .env
     networks: [adameds]
     restart: always
+    ports: ["8087:8087"]
   
   laporan-service:
+    depends_on: [db]
     container_name: laporan-service
     image: adameds/laporan-service:v1.0.0.0
     build:
@@ -87,8 +101,10 @@ services:
       - .env
     networks: [adameds]
     restart: always
+    ports: ["8088:8088"]
   
   payment-service:
+    depends_on: [db]
     container_name: payment-service
     image: adameds/payment-service:v1.0.0.0
     build:
@@ -98,8 +114,10 @@ services:
       - .env
     networks: [adameds]
     restart: always
+    ports: ["8089:8089"]
   
   riwayat-service:
+    depends_on: [db]
     container_name: riwayat-service
     image: adameds/riwayat-service:v1.0.0.0
     build:
@@ -109,8 +127,10 @@ services:
       - .env
     networks: [adameds]
     restart: always
+    ports: ["8090:8090"]
   
   rawat-inap-service:
+    depends_on: [db]
     container_name: rawat-inap-service
     image: adameds/rawat-inap-service:v1.0.0.0
     build:
@@ -120,8 +140,10 @@ services:
       - .env
     networks: [adameds]
     restart: always
+    ports: ["8091:8091"]
   
   rawat-jalan-service:
+    depends_on: [db]
     container_name: rawat-jalan-service
     image: adameds/rawat-jalan-service:v1.0.0.0
     build:
@@ -131,8 +153,10 @@ services:
       - .env
     networks: [adameds]
     restart: always
+    ports: ["8092:8092"]
 
   rekamedis-service:
+    depends_on: [db]
     container_name: rekamedis-service
     image: adameds/rekamedis-service:v1.0.0.0
     build:
@@ -144,6 +168,7 @@ services:
     restart: always
   
   setting-service:
+    depends_on: [db]
     container_name: setting-service
     image: adameds/setting-service:v1.0.0.0
     build:
@@ -153,8 +178,10 @@ services:
       - .env
     networks: [adameds]
     restart: always
+    ports: ["8093:8093"]
   
   stok-farmasi-service:
+    depends_on: [db]
     container_name: stok-farmasi-service
     image: adameds/stok-farmasi-service:v1.0.0.0
     build:
@@ -164,6 +191,7 @@ services:
       - .env
     networks: [adameds]
     restart: always
+    ports: ["8094:8094"]
   db:
     container_name: db-adameds
     ports: ["5432:5432"]

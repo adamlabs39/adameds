@@ -202,6 +202,17 @@ services:
         target: /data/db
     restart: always
     networks: [adameds]
+  
+  redis:
+    container_name: redis-adameds
+    image: redis:7.0.11-alpine
+    ports: ["6379:6379"]
+    volumes:
+      - type: volume
+        source: redis-adameds
+        target: /data
+    restart: always
+    networks: [adameds]
 
 volumes:
   db-adameds: {}

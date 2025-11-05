@@ -143,7 +143,7 @@ services:
     ports: ["8092:8092"]
 
   rekamedis-service:
-    depends_on: [db]
+    depends_on: [db, mongodb]
     container_name: rekamedis-service
     image: adameds/rekamedis-service:v1.0.0.0
     build:
@@ -191,7 +191,17 @@ services:
     restart: always
     env_file:
       - .env
-
+    networks: [adameds]
+  mongodb:
+    container_name: mongodb-adameds
+    image: mongo:6.0.7-bionic
+    ports: ["27017:27017"]
+    volumes:
+      - type: volume
+        source: mongodb-adameds
+        target: /data/db
+    restart: always
+    networks: [adameds]
 
 volumes:
   db-adameds: {}

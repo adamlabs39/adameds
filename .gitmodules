@@ -74,3 +74,8 @@
 [submodule "frontend-service"]
     path = frontend-service
     url = https://github.com/adamlabs39/frontend-service.git
+
+
+[submodule "datamaster-service"]
+    path = datamaster-service
+    url = https://github.com/adamlabs39/datamaster-service.git

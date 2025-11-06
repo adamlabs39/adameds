@@ -194,14 +194,21 @@ services:
   db:
     container_name: db-adameds
     ports: ["5432:5432"]
-    image: postgres:16-alpine3.21
+    image: postgres:16-alpine
     volumes:
       - type: volume
         source: db-adameds
         target: /var/lib/postgresql
+      - type: bind
+        source: ./schema.sql
+        target: /docker-entrypoint-initdb.d/schema.sql
     restart: always
     env_file:
       - .env
+    environment:
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
     networks: [adameds]
   mongodb:
     container_name: mongodb-adameds
@@ -230,6 +237,8 @@ services:
 
 volumes:
   db-adameds: {}
+  mongodb-adameds: {}
+  redis-adameds: {}
 networks:
   adameds:
-    driver: host
+    driver: bridge

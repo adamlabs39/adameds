@@ -1,11 +1,11 @@
 services:
   admisi-services:
-    depends_on: [db]
+    depends_on: [db, redis, mongodb]
     container_name: admisi-service
     image: adameds/admisi-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./admisi-service/Dockerfile
+      context: ./admisi-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
@@ -13,12 +13,12 @@ services:
     ports: ["8081:8081"]
   
   antrian-service:
-    depends_on: [db]
+    depends_on: [db, redis, mongodb]
     container_name: antrian-service
     image: adameds/antrian-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./antrian-service/Dockerfile
+      context: ./antrian-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
@@ -26,12 +26,12 @@ services:
     ports: ["8082:8082"]
 
   auth-service:
-    depends_on: [db]
+    depends_on: [db, redis, mongodb]
     container_name: auth-service
     image: adameds/auth-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./auth-service/Dockerfile
+      context: ./auth-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
@@ -39,12 +39,12 @@ services:
     ports: ["8083:8083"]
     
   farmasi-service:
-    depends_on: [db]
+    depends_on: [db, redis, mongodb]
     container_name: farmasi-service
     image: adameds/farmasi-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./farmasi-service/Dockerfile
+      context: ./farmasi-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
@@ -52,12 +52,12 @@ services:
     ports: ["8084:8084"]
   
   igd-service:
-    depends_on: [db]
+    depends_on: [db, redis, mongodb]
     container_name: igd-service
     image: adameds/igd-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./igd-service/Dockerfile
+      context: ./igd-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
@@ -65,12 +65,12 @@ services:
     ports: ["8085:8085"]
 
   inventory-service:
-    depends_on: [db]
+    depends_on: [db, redis, mongodb]
     container_name: inventory-service
     image: adameds/inventory-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./inventory-service/Dockerfile
+      context: ./inventory-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
@@ -78,12 +78,12 @@ services:
     ports: ["8086:8086"]
   
   lab-service:
-    depends_on: [db]
+    depends_on: [db, redis, mongodb]
     container_name: lab-service
     image: adameds/lab-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./lab-service/Dockerfile
+      context: ./lab-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
@@ -91,12 +91,12 @@ services:
     ports: ["8087:8087"]
   
   laporan-service:
-    depends_on: [db]
+    depends_on: [db, redis, mongodb]
     container_name: laporan-service
     image: adameds/laporan-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./laporan-service/Dockerfile
+      context: ./laporan-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
@@ -104,12 +104,12 @@ services:
     ports: ["8088:8088"]
   
   payment-service:
-    depends_on: [db]
+    depends_on: [db, redis, mongodb]
     container_name: payment-service
     image: adameds/payment-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./payment-service/Dockerfile
+      context: ./payment-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
@@ -117,12 +117,12 @@ services:
     ports: ["8089:8089"]
   
   rawat-inap-service:
-    depends_on: [db]
+    depends_on: [db, redis, mongodb]
     container_name: rawat-inap-service
     image: adameds/rawat-inap-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./rawat-inap-service/Dockerfile
+      context: ./rawat-inap-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
@@ -130,12 +130,12 @@ services:
     ports: ["8091:8091"]
   
   rawat-jalan-service:
-    depends_on: [db]
+    depends_on: [db, redis, mongodb]
     container_name: rawat-jalan-service
     image: adameds/rawat-jalan-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./rawat-jalan-service/Dockerfile
+      context: ./rawat-jalan-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
@@ -143,12 +143,12 @@ services:
     ports: ["8092:8092"]
 
   rekamedis-service:
-    depends_on: [db, mongodb]
+    depends_on: [db, redis, mongodb]
     container_name: rekamedis-service
     image: adameds/rekamedis-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./rekamedis-service/Dockerfile
+      context: ./rekamedis-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
@@ -156,12 +156,12 @@ services:
     ports: ["8093:8093"]
   
   setting-service:
-    depends_on: [db]
+    depends_on: [db, redis, mongodb]
     container_name: setting-service
     image: adameds/setting-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./setting-service/Dockerfile
+      context: ./setting-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
@@ -169,23 +169,24 @@ services:
     ports: ["8094:8094"]
   
   stok-farmasi-service:
-    depends_on: [db]
+    depends_on: [db, redis, mongodb]
     container_name: stok-farmasi-service
     image: adameds/stok-farmasi-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./stok-farmasi-service/Dockerfile
+      context: ./stok-farmasi-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
     restart: always
     ports: ["8095:8095"]
   datamaster-service:
+    depends_on: [db, redis, mongodb]
     container_name: datamaster-service
     image: adameds/datamaster-service:v1.0.0.0
     build:
-      context: ./
-      dockerfile: ./datamaster-service/Dockerfile
+      context: ./datamaster-service
+      dockerfile: Dockerfile
     env_file:
       - .env
     networks: [adameds]
@@ -212,7 +213,7 @@ services:
     networks: [adameds]
   mongodb:
     container_name: mongodb-adameds
-    image: mongo:6.0.7-bionic
+    image: mongo:latest
     ports: ["27017:27017"]
     volumes:
       - type: volume

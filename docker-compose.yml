@@ -180,6 +180,17 @@ services:
     networks: [adameds]
     restart: always
     ports: ["8095:8095"]
+  datamaster-service:
+    container_name: datamaster-service
+    image: adameds/datamaster-service:v1.0.0.0
+    build:
+      context: ./
+      dockerfile: ./datamaster-service/Dockerfile
+    env_file:
+      - .env
+    networks: [adameds]
+    restart: always
+    ports: ["8096:8096"]
   db:
     container_name: db-adameds
     ports: ["5432:5432"]
@@ -211,6 +222,9 @@ services:
       - type: volume
         source: redis-adameds
         target: /data
+      - type: bind
+        source: ./redis.conf
+        target: /usr/local/etc/redis/redis.conf
     restart: always
     networks: [adameds]
 

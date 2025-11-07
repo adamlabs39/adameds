@@ -16,7 +16,7 @@
 
 [submodule "farmasi-service"]
     path = farmasi-service
-    url = https://github.com/adamlabs39/farmasi-service.gi
+    url = https://github.com/adamlabs39/farmasi-service.git
 
 
 

@@ -8,6 +8,8 @@ services:
     ports: ["5520:5520"]
     networks: [adameds]
     restart: always
+    env_file:
+      - .env
     
   admisi-services:
     depends_on: [db, redis, mongodb]

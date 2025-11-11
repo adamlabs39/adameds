@@ -2,7 +2,7 @@ services:
   admisi-services:
     depends_on: [db, redis, mongodb]
     container_name: admisi-service
-    image: adameds/admisi-service:v1.0.0.0
+    image: adameds/admisi-service:v1.0.0
     build:
       context: ./admisi-service
       dockerfile: Dockerfile
@@ -15,7 +15,7 @@ services:
   antrian-service:
     depends_on: [db, redis, mongodb]
     container_name: antrian-service
-    image: adameds/antrian-service:v1.0.0.0
+    image: adameds/antrian-service:v1.0.0
     build:
       context: ./antrian-service
       dockerfile: Dockerfile
@@ -28,7 +28,7 @@ services:
   auth-service:
     depends_on: [db, redis, mongodb]
     container_name: auth-service
-    image: adameds/auth-service:v1.0.0.0
+    image: adameds/auth-service:v1.0.0
     build:
       context: ./auth-service
       dockerfile: Dockerfile
@@ -41,7 +41,7 @@ services:
   farmasi-service:
     depends_on: [db, redis, mongodb]
     container_name: farmasi-service
-    image: adameds/farmasi-service:v1.0.0.0
+    image: adameds/farmasi-service:v1.0.0
     build:
       context: ./farmasi-service
       dockerfile: Dockerfile
@@ -54,7 +54,7 @@ services:
   igd-service:
     depends_on: [db, redis, mongodb]
     container_name: igd-service
-    image: adameds/igd-service:v1.0.0.0
+    image: adameds/igd-service:v1.0.0
     build:
       context: ./igd-service
       dockerfile: Dockerfile
@@ -67,7 +67,7 @@ services:
   inventory-service:
     depends_on: [db, redis, mongodb]
     container_name: inventory-service
-    image: adameds/inventory-service:v1.0.0.0
+    image: adameds/inventory-service:v1.0.0
     build:
       context: ./inventory-service
       dockerfile: Dockerfile
@@ -80,7 +80,7 @@ services:
   lab-service:
     depends_on: [db, redis, mongodb]
     container_name: lab-service
-    image: adameds/lab-service:v1.0.0.0
+    image: adameds/lab-service:v1.0.0
     build:
       context: ./lab-service
       dockerfile: Dockerfile
@@ -93,7 +93,7 @@ services:
   laporan-service:
     depends_on: [db, redis, mongodb]
     container_name: laporan-service
-    image: adameds/laporan-service:v1.0.0.0
+    image: adameds/laporan-service:v1.0.0
     build:
       context: ./laporan-service
       dockerfile: Dockerfile
@@ -106,7 +106,7 @@ services:
   payment-service:
     depends_on: [db, redis, mongodb]
     container_name: payment-service
-    image: adameds/payment-service:v1.0.0.0
+    image: adameds/payment-service:v1.0.0
     build:
       context: ./payment-service
       dockerfile: Dockerfile
@@ -119,7 +119,7 @@ services:
   rawat-inap-service:
     depends_on: [db, redis, mongodb]
     container_name: rawat-inap-service
-    image: adameds/rawat-inap-service:v1.0.0.0
+    image: adameds/rawat-inap-service:v1.0.0
     build:
       context: ./rawat-inap-service
       dockerfile: Dockerfile
@@ -132,7 +132,7 @@ services:
   rawat-jalan-service:
     depends_on: [db, redis, mongodb]
     container_name: rawat-jalan-service
-    image: adameds/rawat-jalan-service:v1.0.0.0
+    image: adameds/rawat-jalan-service:v1.0.0
     build:
       context: ./rawat-jalan-service
       dockerfile: Dockerfile
@@ -145,7 +145,7 @@ services:
   rekamedis-service:
     depends_on: [db, redis, mongodb]
     container_name: rekamedis-service
-    image: adameds/rekamedis-service:v1.0.0.0
+    image: adameds/rekamedis-service:v1.0.0
     build:
       context: ./rekamedis-service
       dockerfile: Dockerfile
@@ -158,7 +158,7 @@ services:
   setting-service:
     depends_on: [db, redis, mongodb]
     container_name: setting-service
-    image: adameds/setting-service:v1.0.0.0
+    image: adameds/setting-service:v1.0.0
     build:
       context: ./setting-service
       dockerfile: Dockerfile
@@ -171,7 +171,7 @@ services:
   stok-farmasi-service:
     depends_on: [db, redis, mongodb]
     container_name: stok-farmasi-service
-    image: adameds/stok-farmasi-service:v1.0.0.0
+    image: adameds/stok-farmasi-service:v1.0.0
     build:
       context: ./stok-farmasi-service
       dockerfile: Dockerfile
@@ -183,7 +183,7 @@ services:
   datamaster-service:
     depends_on: [db, redis, mongodb]
     container_name: datamaster-service
-    image: adameds/datamaster-service:v1.0.0.0
+    image: adameds/datamaster-service:v1.0.0
     build:
       context: ./datamaster-service
       dockerfile: Dockerfile

@@ -1,4 +1,14 @@
 services:
+  frontend_service:
+    build:
+      context: ./frontend-service
+      dockerfile: Dockerfile
+    image: adameds/frontend:v1.0.0
+    container_name: adameds-frontend
+    ports: ["5520:5520"]
+    networks: [adameds]
+    restart: always
+    
   admisi-services:
     depends_on: [db, redis, mongodb]
     container_name: admisi-service

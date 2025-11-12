@@ -233,6 +233,10 @@ services:
         target: /data/db
     restart: always
     networks: [adameds]
+    environment:
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_DB_USERNAME}
+      MONGO_DB_PASSWORD: ${MONGO_DB_PASSWORD}
   
   redis:
     container_name: redis-adameds

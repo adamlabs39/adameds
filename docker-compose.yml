@@ -241,7 +241,8 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_DB_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_DB_PASSWORD}
       MONGO_DB_PASSWORD: ${MONGO_DB_PASSWORD}
-  
+      MONGO_AUTH_SOURCE: ${MONGO_DB_AUTH_SOURCE}
+
   redis:
     container_name: redis-adameds
     image: redis:7.0.11-alpine

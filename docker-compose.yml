@@ -232,8 +232,8 @@ services:
         source: mongodb-adameds
         target: /data/db
       - type: bind
-        source: /docker-entrypoint-initdb.d/mongo-init.js:ro
-        target: ./mongo-init.js
+        source: ./mongo-init.js
+        target: ./docker-entrypoint-initdb.d/mongo-init.js
     restart: always
     networks: [adameds]
     environment:
